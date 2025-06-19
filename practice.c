@@ -288,26 +288,443 @@
 
 
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i;
+//     int sum = 0;
+//     int average;
+//     int count = 0; 
+
+//     for (i = 1; i <= 100; i++)
+//     {
+//         if (i % 2 == 1)
+//         {
+//             sum += i; //奇数之和
+//             count++; //奇数个数
+//         }
+//     }
+//     average = sum / count; //平均值
+//     printf("sum = %d\n", sum);  //奇数之和
+//     printf("count = %d\n", count);  //奇数个数
+//     printf("average = %d\n", average);  //平均值
+
+// }
+
+
+// //前自增、后自增的区别
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i = 0;
+//     int j = 0;
+
+//     i = ++j; //前自增，先将j加1，然后将j的值赋给i
+//     printf("i = %d, j = %d\n", i, j); //i = 1, j = 1
+
+//     i = j++; //后自增，先将j的值赋给i，然后将j加1
+//     printf("i = %d, j = %d\n", i, j); //i = 1, j = 2
+
+//     return 0;
+// }
+
+
+
+// //三目运算符的使用
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a = 10;
+//     int b = 20;
+//     int max;
+
+//     //使用三目运算符判断最大值
+//     max = (a > b) ? a : b; //如果a大于b，则max为a，否则为b
+
+// /*
+//     //使用if-else语句判断最大值
+//     if (a > b)
+//     {
+//         max = a; //如果a大于b，则max为a
+//     }
+//     else
+//     {
+//         max = b; //否则，max为b
+//     }
+// */
+
+//     printf("max = %d\n", max); //输出最大值
+
+//     return 0;
+// }
+
+
+// //逗号表达式
+// #include <stdio.h>
+// int main()
+// {
+//     int a = 1, b = 2, c = 3;
+//     int result;
+
+//     //逗号表达式，先执行a++，然后执行b++，最后将c的值赋给result
+//     result = (a++, b++, c);
+    
+//     printf("a = %d, b = %d, c = %d, result = %d\n", a, b, c, result); //输出结果
+
+//     return 0;
+// }
+
+
+// //用while从1加到100
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i = 1;
+//     int sum = 0;
+
+//     while (i <= 100)//当i小于等于100时，执行循环体
+//     {
+//         sum += i; //将i的值累加到sum中
+//         i++; //i自增1
+//     }
+//     printf("sum = %d\n", sum); //输出1到100的和
+//     printf("i = %d\n", i); //输出i的值，应该是101
+    
+//     return 0;
+// }
+
+
+// // 判断是不是回文数
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i = 0;
+//     int j = 0;
+//     int sum = 0; //用于存储反转后的数字
+
+//     printf("请输入一个整数：\n");//提示用户输入一个整数
+//     scanf("%d", &i); //读取一个整数
+
+//     j = i; //将i的值赋给j,方便后面比较
+//     while (j)
+//     {
+//         sum = sum*10 + j % 10; //将j的最后一位数字加到sum中
+//         j /= 10; //将j除以10，去掉最后一位数字，都是整数时不保留小数部分
+//     }
+
+//     if (sum == i) //如果反转后的数字等于原数字
+//     {
+//         printf("是回文数\n"); //输出是回文数
+//     }
+//     else
+//     {
+//         printf("不是回文数\n"); //输出不是回文数
+//     }
+
+//     return 0; //返回0，表示程序正常结束
+// }
+
+
+// // 斐波那契数列
+// #include <stdio.h>
+
+// int main()
+// {
+//     int n; //定义一个整数变量n，用于存储用户输入的序列号
+//     int i = 1;
+//     int j = 2;
+//     int k = 0;
+//     int m;
+
+//     printf("请输入序列号:");
+//     scanf("%d", &n); //读取一个整数
+
+//     if (n == 1)
+//     {
+//         k = 1;;
+//     }
+//     else if (n == 2)
+//     {
+//         k = 2;
+//     }
+//     else
+//     {
+//         for (m = 3; m <= n; m++)
+//         {
+//             k = i + j;
+//             i = j;
+//             j = k; //将i和j的值更新为下一个斐波那契数
+//         }
+//     }
+//     printf("第%d个斐波那契数是:%d\n", n, k); //输出第n个斐波那契数
+    
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// //输出前30个斐波那契数
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i, j, k;
+//     int n;
+//     i = 1;
+//     j = 2;
+
+//     printf("%d, %d", i, j); // 输出前两个斐波那契数
+
+//     for (n = 3; n <= 30; n++)
+//     {
+//         k = i + j;
+//         printf(", %d", k); // 输出当前斐波那契数
+//         i = j; // 更新i为j的值
+//         j = k; // 更新j为当前斐波那契数k的值
+//     }
+    
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int value;
+
+//     printf("请输入要进入的楼层数："); // 提示用户输入要进入的楼层数
+//     scanf("%d", &value); // 读取用户输入的楼层数
+
+//     switch (value) // 根据用户输入的楼层数进行选择
+//     {
+//         case 1:
+//             printf("一楼：欢迎光临！\n"); // 如果输入1，输出一楼欢迎信息
+//             break;
+//         case 2:
+//             printf("二楼：请慢走！\n"); // 如果输入2，输出二楼信息
+//             break;
+//         case 3:
+//             printf("三楼：请注意安全！\n"); // 如果输入3，输出三楼信息
+//             break;
+//         default:
+//             printf("没有这个楼层，请重新输入！\n"); // 如果输入其他数字，提示无效楼层
+//             break;
+//     }
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// //break的使用示例
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i, j;
+
+//     for (i = 0; i < 3; i++)
+//     {
+//         for (i = 1; i < 4; i++)
+//         {
+//             break; // 这里的break会跳出内层循环
+//         }
+        
+//     }
+    
+//     return 0; // 返回0，表示程序正常结束
+// } 
+
+
+
+// //continue的使用示例
+// #include <stdio.h>
+// int main()
+// {
+//     int i;
+
+//     for (i = 0; i < 10; i++)
+//     {
+//         if (i % 2 == 0) // 如果i是偶数
+//         {
+//             continue; // 跳过当前循环，继续下一次循环
+//         }
+//         printf("%d ", i); // 输出奇数
+//     }
+//     printf("\n");
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// #include <stdio.h>
+
+// int main()
+// {  
+//     float i;
+
+//     i = 1/3;
+//     printf("i = %f\n", i); // 输出i的值，应该是0，因为1/2是整形相除，结果为0
+//     i = 1.0/3; // 这里1.0是浮点数，结果为0.5   
+//     printf("i = %f\n", i); // 输出i的值，应该是0，因为i是整形变量，0.5会被截断为0
+//     i = 1.0/3.0; // 这里1.0和2.0都是浮点数，结果为0.5
+//     printf("i = %f\n", i); // 输出i的值，应该是0，因为i是整形变量，0.5会被截断为0
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// //do while循环的使用示例
+// #include <stdio.h>
+// int main()
+// {
+//     int i = 0;
+
+//     do
+//     {
+//         printf("i = %d\n", i); // 输出i的值
+//         i++; // i自增1
+//     } while (i < 5); // 当i小于5时，继续循环
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// //数组的使用示例
+// #include <stdio.h>
+
+// int main()
+// {  
+//     int a[5] = {1, 2, 3, 4, 5}; // 定义一个整型数组a，包含5个元素
+//     int i;
+//     int *p = a; // 定义一个整型指针p，指向数组a的首元素
+//     for (i = 0; i < 5; i++)
+//     {
+//         printf("a[%d] = %d\n", i, *(p + i)); // 使用指针访问数组元素
+//     }
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// //数组
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a[8] = {1, 2, 3, 4, 5, 6, 7, 8}; // 定义一个整型数组a，包含8个元素
+//     int i, j;
+//     int t;
+
+//     for (i = 0; i < 8; i++)
+//     {
+//         for (j = i + 1; j < 8; j++)
+//         {
+//             if (a[i] < a[j]) // 如果当前元素小于后面的元素
+//             {
+//                 t = a[i]; // 交换两个元素
+//                 a[i] = a[j];
+//                 a[j] = t;
+//             }
+//         }
+//     }
+//     printf("排序后的数组为：\n");
+//     for (i = 0; i < 8; i++)
+//     {
+//         printf("%d ", a[i]); // 输出排序后的数组元素
+//     }
+// }
+
+
+// //二维数组的使用
+
+// #include <stdio.h>
+// int main()
+// {
+//     int a[3][4] = { // 定义一个3行4列的二维数组
+//         {1, 2, 3, 4},
+//         {5, 6, 7, 8},
+//         {9, 10, 11, 12}
+//     };
+//     int i, j;
+
+//     printf("二维数组的元素为：\n");
+//     for (i = 0; i < 3; i++)
+//     {
+//         for (j = 0; j < 4; j++)
+//         {
+//             printf("%d ", a[i][j]); // 输出二维数组的元素
+//         }
+//         printf("\n"); // 换行 
+//     }
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+////函数
+// #include <stdio.h>
+
+// void f(void)
+// {
+//     int i;
+
+//     for (i = 0; i < 5; i++)
+//     {
+//         printf("大家辛苦了！\n");
+//         break; // 这里的break会跳出循环
+//     }
+//     printf("同志们好！\n"); // 这里的printf会被执行
+    
+// }
+
+// int main(void)
+// {
+//     f(); // 调用函数f
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+
+//函数的使用
 #include <stdio.h>
 
-int main()
+int sushu(int n)
 {
     int i;
-    int sum = 0;
-    int average;
-    int count = 0; 
-
-    for (i = 1; i <= 100; i++)
+    for (i = 2; i < n; i++)
     {
-        if (i % 2 == 1)
+        if (n % i == 0)
         {
-            sum += i; //奇数之和
-            count++; //奇数个数
+            return 0; // 如果n能被i整除，说明n不是素数，返回0
+        }
+        else
+        {
+            return 1; // 如果n不能被i整除，说明n是素数，返回1
         }
     }
-    average = sum / count; //平均值
-    printf("sum = %d\n", sum);  //奇数之和
-    printf("count = %d\n", count);  //奇数个数
-    printf("average = %d\n", average);  //平均值
+}
 
+int main(void)
+{
+    int n; // 定义一个整数变量n，用于存储用户输入的整数
+
+    printf("请输入一个整数："); // 提示用户输入一个整数
+
+    scanf("%d", &n); // 读取用户输入的整数n
+    if (sushu(n) == 1) // 调用sushu函数判断n
+    {
+        printf("%d是素数\n", n); // 如果sushu函数返回1，输出n是素数
+    }
+    else
+    {
+        printf("%d不是素数\n", n); // 如果sushu函数返回0，输出n不是素数
+    }
+
+    return 0; // 返回0，表示程序正常结束
 }
