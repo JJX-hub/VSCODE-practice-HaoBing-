@@ -712,18 +712,18 @@ int sushu(int n)
 
 int main(void)
 {
-    int n; // 定义一个整数变量n，用于存储用户输入的整数
+    int m; // 定义一个整数变量n，用于存储用户输入的整数
 
     printf("请输入一个整数："); // 提示用户输入一个整数
 
-    scanf("%d", &n); // 读取用户输入的整数n
-    if (sushu(n) == 1) // 调用sushu函数判断n
+    scanf("%d", &m); // 读取用户输入的整数n
+    if (sushu(m) == 1) // 调用sushu函数判断n
     {
-        printf("%d是素数\n", n); // 如果sushu函数返回1，输出n是素数
+        printf("%d是素数\n", m); // 如果sushu函数返回1，输出n是素数
     }
     else
     {
-        printf("%d不是素数\n", n); // 如果sushu函数返回0，输出n不是素数
+        printf("%d不是素数\n", m); // 如果sushu函数返回0，输出n不是素数
     }
 
     return 0; // 返回0，表示程序正常结束
