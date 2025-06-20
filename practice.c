@@ -691,40 +691,108 @@
 
 
 
-//函数的使用
-#include <stdio.h>
+// //函数的使用
+// #include <stdio.h>
 
-int sushu(int n)
+// int sushu(int n)
+// {
+//     int i;
+//     for (i = 2; i < n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             return 0; // 如果n能被i整除，说明n不是素数，返回0
+//         }
+//         else
+//         {
+//             return 1; // 如果n不能被i整除，说明n是素数，返回1
+//         }
+//     }
+// }
+
+// int main(void)
+// {
+//     int m; // 定义一个整数变量n，用于存储用户输入的整数
+
+//     printf("请输入一个整数："); // 提示用户输入一个整数
+
+//     scanf("%d", &m); // 读取用户输入的整数n
+//     if (sushu(m) == 1) // 调用sushu函数判断n
+//     {
+//         printf("%d是素数\n", m); // 如果sushu函数返回1，输出n是素数
+//     }
+//     else
+//     {
+//         printf("%d不是素数\n", m); // 如果sushu函数返回0，输出n不是素数
+//     }
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+
+//求1到某个数字之间的所有素数，并将其输出
+#include <stdio.h>
+#include <stdbool.h> // 引入stdbool.h头文件以使用bool类型
+
+//本函数的功能是判断n是否是素数
+//如果是素数，返回true；否则，返回false
+bool is_prime(int n)
 {
     int i;
+
+    if (n < 2)
+    {
+    return false; // 小于2的数不是素数
+    }
+
+    if (n == 2)
+    {
+        return true; // 2是素数
+    }
+
     for (i = 2; i < n; i++)
     {
-        if (n % i == 0)
+        if (n % i == 0) // 如果i能被j整除
+            break; // 不是素数，跳出内层循环
+    }
+    if (i == n) // 如果内层循环没有被break，说明i是素数
+        return true; // 是素数，返回true
+    else
+        return false; // 不是素数，返回false
+}
+
+//本函数的功能是遍历从2到n之间的所有素数，并将其输出
+//参数n是用户输入的整数
+void Traverse(int n)
+{
+    int i;
+
+    for (i = 2; i <= n; i++) // 从2开始遍历到n
+    {
+        if (is_prime(i)) // 调用is_prime函数判断i是否是素数
         {
-            return 0; // 如果n能被i整除，说明n不是素数，返回0
-        }
-        else
-        {
-            return 1; // 如果n不能被i整除，说明n是素数，返回1
+            printf("%d \n", i); // 如果是素数，输出i
         }
     }
+    printf("\n"); // 输出换行符
 }
 
 int main(void)
 {
-    int m; // 定义一个整数变量n，用于存储用户输入的整数
+    int value;
 
     printf("请输入一个整数："); // 提示用户输入一个整数
+    scanf("%d", &value); // 读取用户输入的整数
 
-    scanf("%d", &m); // 读取用户输入的整数n
-    if (sushu(m) == 1) // 调用sushu函数判断n
-    {
-        printf("%d是素数\n", m); // 如果sushu函数返回1，输出n是素数
-    }
-    else
-    {
-        printf("%d不是素数\n", m); // 如果sushu函数返回0，输出n不是素数
-    }
+    Traverse(value); // 调用Traverse函数遍历并输出素数
 
+    // for (i = 0; i < value; i++)
+    // {
+    //     if (is_prime(i)) // 调用is_prime函数判断i是否是素数
+    //     {
+    //         printf("%d \n", i); // 如果是素数，输出i
+    //     }
+    // }
     return 0; // 返回0，表示程序正常结束
 }
