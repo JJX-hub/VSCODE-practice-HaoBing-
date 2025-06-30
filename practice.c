@@ -731,68 +731,138 @@
 
 
 
-//求1到某个数字之间的所有素数，并将其输出
+// //求1到某个数字之间的所有素数，并将其输出
+// #include <stdio.h>
+// #include <stdbool.h> // 引入stdbool.h头文件以使用bool类型
+
+// //本函数的功能是判断n是否是素数
+// //如果是素数，返回true；否则，返回false
+// bool is_prime(int n)
+// {
+//     int i;
+
+//     if (n < 2)
+//     {
+//     return false; // 小于2的数不是素数
+//     }
+
+//     if (n == 2)
+//     {
+//         return true; // 2是素数
+//     }
+
+//     for (i = 2; i < n; i++)
+//     {
+//         if (n % i == 0) // 如果i能被j整除
+//             break; // 不是素数，跳出内层循环
+//     }
+//     if (i == n) // 如果内层循环没有被break，说明i是素数
+//         return true; // 是素数，返回true
+//     else
+//         return false; // 不是素数，返回false
+// }
+
+// //本函数的功能是遍历从2到n之间的所有素数，并将其输出
+// //参数n是用户输入的整数
+// void Traverse(int n)
+// {
+//     int i;
+
+//     for (i = 2; i <= n; i++) // 从2开始遍历到n
+//     {
+//         if (is_prime(i)) // 调用is_prime函数判断i是否是素数
+//         {
+//             printf("%d \n", i); // 如果是素数，输出i
+//         }
+//     }
+// }
+
+// int main(void)
+// {
+//     int value;
+
+//     printf("请输入一个整数："); // 提示用户输入一个整数
+//     scanf("%d", &value); // 读取用户输入的整数
+
+//     Traverse(value); // 调用Traverse函数遍历并输出素数
+
+//     // for (i = 0; i < value; i++)
+//     // {
+//     //     if (is_prime(i)) // 调用is_prime函数判断i是否是素数
+//     //     {
+//     //         printf("%d \n", i); // 如果是素数，输出i
+//     //     }
+//     // }
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+// #include <stdio.h>
+// #include <string.h> // 引入string.h头文件以使用strlen函数
+
+// int main(void)
+// {
+//     char szStr1[] = {'1', '2', '3', '4', '5', '\0'}; // 定义一个字符数组szStr1，包含5个字符和一个结束符'\0'
+//     char szStr2[6] = {'1', '2', '3', '4', '5', '6'}; //"12345"; // 定义一个字符串szStr3，包含5个字符和一个结束符'\0'
+//     // 注意：szStr1和szStr3的内容是相同的，但定义方式不同。
+//     // szStr1是一个字符数组，手动添加了结束符'\0'
+//     char szStr3[6] = {'1', '2', '3', '4', '5', '0'}; // 定义一个字符数组szStr2
+
+//     printf("szStr1 = %ld  %ld\n", strlen(szStr1), sizeof(szStr1)); // 输出szStr1的内容
+//     printf("szStr2 = %ld  %ld\n", strlen(szStr2), sizeof(szStr2)); // 输出szStr2的内容
+//     printf("szStr3 = %ld  %ld\n", strlen(szStr3), sizeof(szStr3)); // 输出szStr3的内容
+// }
+
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i, j;
+
+//     // scanf("%d %d", &i, &j); // 从标准输入读取一个整数i
+//     // printf("i = %d\n", i); // 输出读取的整数i
+//     // printf("j = %d\n", j); // 输出读取的整数j
+
+//     i = getchar(); // 获取一个字符
+//     while (i != EOF) // 当i不是文件结束符时
+//     {
+//         putchar(i); // 输出字符i
+//         i = getchar(); // 获取下一个字符
+//     }
+
+//     return 0;
+// }
+
+
+//互换两个数字
 #include <stdio.h>
-#include <stdbool.h> // 引入stdbool.h头文件以使用bool类型
 
-//本函数的功能是判断n是否是素数
-//如果是素数，返回true；否则，返回false
-bool is_prime(int n)
+// void huhuan(int a, int b) 
+// {
+//     int temp; // 定义一个临时变量用于交换
+//     temp = a; // 将a的值存储到temp中
+//     a = b; // 将b的值赋给a
+//     b = temp; // 将temp的值赋给b
+// }
+void huhuan(int * a, int * b)
 {
-    int i;
-
-    if (n < 2)
-    {
-    return false; // 小于2的数不是素数
-    }
-
-    if (n == 2)
-    {
-        return true; // 2是素数
-    }
-
-    for (i = 2; i < n; i++)
-    {
-        if (n % i == 0) // 如果i能被j整除
-            break; // 不是素数，跳出内层循环
-    }
-    if (i == n) // 如果内层循环没有被break，说明i是素数
-        return true; // 是素数，返回true
-    else
-        return false; // 不是素数，返回false
+    int temp; //临时变量用来交换a和b的值
+    temp = *a; //将a的值存储到temp中
+    *a = *b; //将b的值赋给a
+    *b = temp; //将temp的值赋给b
+    //这里使用指针用来传递函数，这样就可以在main函数中实现a和b的值交换
 }
 
-//本函数的功能是遍历从2到n之间的所有素数，并将其输出
-//参数n是用户输入的整数
-void Traverse(int n)
-{
-    int i;
-
-    for (i = 2; i <= n; i++) // 从2开始遍历到n
-    {
-        if (is_prime(i)) // 调用is_prime函数判断i是否是素数
-        {
-            printf("%d \n", i); // 如果是素数，输出i
-        }
-    }
-    printf("\n"); // 输出换行符
-}
-
+//这里需要注意的是，函数huhuan只是交换了a和b的值，但在main函数中调用huhuan时，a和b的值并没有被改变，因为C语言中的函数参数是按值传递的。
+// 如果想要在main函数中看到a和b的值被交换，需要使用指针来传递参数。
 int main(void)
 {
-    int value;
+    int a = 3;
+    int b = 5;
 
-    printf("请输入一个整数："); // 提示用户输入一个整数
-    scanf("%d", &value); // 读取用户输入的整数
+    huhuan(&a, &b); // 调用huhuan函数交换a和b的值
+    printf("a = %d, b = %d\n", a, b); //输出交换后a和b的值
 
-    Traverse(value); // 调用Traverse函数遍历并输出素数
-
-    // for (i = 0; i < value; i++)
-    // {
-    //     if (is_prime(i)) // 调用is_prime函数判断i是否是素数
-    //     {
-    //         printf("%d \n", i); // 如果是素数，输出i
-    //     }
-    // }
     return 0; // 返回0，表示程序正常结束
 }
