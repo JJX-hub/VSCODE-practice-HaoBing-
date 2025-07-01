@@ -835,34 +835,58 @@
 // }
 
 
-//互换两个数字
+// //用指针互换两个数字
+// #include <stdio.h>
+
+// // void huhuan(int a, int b) 
+// // {
+// //     int temp; // 定义一个临时变量用于交换
+// //     temp = a; // 将a的值存储到temp中
+// //     a = b; // 将b的值赋给a
+// //     b = temp; // 将temp的值赋给b
+// // }
+// void huhuan(int * p, int * q)
+// {
+//     int temp; //临时变量用来交换a和b的值
+//     temp = *p; //将a的值存储到temp中
+//     *p = *q; //将b的值赋给a
+//     *q = temp; //将temp的值赋给b
+//     //这里使用指针用来传递函数，这样就可以在main函数中实现a和b的值交换
+// }
+
+// //这里需要注意的是，函数huhuan只是交换了a和b的值，但在main函数中调用huhuan时，a和b的值并没有被改变，因为C语言中的函数参数是按值传递的。
+// // 如果想要在main函数中看到a和b的值被交换，需要使用指针来传递参 数。
+// int main(void)
+// {
+//     int a = 3;
+//     int b = 5;
+
+//     huhuan(&a, &b); // 调用huhuan函数交换a和b的值 这个符号不一定要与函数里的符号相同，函数里用p、q，这个符号可以是任意的
+//     printf("a = %d, b = %d\n", a, b); //输出交换后a和b的值
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+
+//这样同样也环不了a、b的值
 #include <stdio.h>
 
-// void huhuan(int a, int b) 
-// {
-//     int temp; // 定义一个临时变量用于交换
-//     temp = a; // 将a的值存储到temp中
-//     a = b; // 将b的值赋给a
-//     b = temp; // 将temp的值赋给b
-// }
-void huhuan(int * a, int * b)
+int a = 3;
+int b = 5;
+
+void huhuan(int a, int b)
 {
-    int temp; //临时变量用来交换a和b的值
-    temp = *a; //将a的值存储到temp中
-    *a = *b; //将b的值赋给a
-    *b = temp; //将temp的值赋给b
-    //这里使用指针用来传递函数，这样就可以在main函数中实现a和b的值交换
+    int t;
+    t = a;
+    a = b;
+    b = t;
 }
 
-//这里需要注意的是，函数huhuan只是交换了a和b的值，但在main函数中调用huhuan时，a和b的值并没有被改变，因为C语言中的函数参数是按值传递的。
-// 如果想要在main函数中看到a和b的值被交换，需要使用指针来传递参数。
 int main(void)
 {
-    int a = 3;
-    int b = 5;
+    huhuan(a, b);
+    printf("a = %d, b = %d\n",a, b);
 
-    huhuan(&a, &b); // 调用huhuan函数交换a和b的值
-    printf("a = %d, b = %d\n", a, b); //输出交换后a和b的值
-
-    return 0; // 返回0，表示程序正常结束
+    return 0;
 }
+
