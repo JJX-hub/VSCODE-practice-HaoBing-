@@ -868,25 +868,64 @@
 // }
 
 
-//这样同样也环不了a、b的值
+// //这样同样也换不了a、b的值
+// #include <stdio.h>
+
+// int a = 3;
+// int b = 5;
+
+// void huhuan(int a, int b)
+// {
+//     int t;
+//     t = a;
+//     a = b;
+//     b = t;
+// }
+
+// int main(void)
+// {
+//     huhuan(a, b);
+//     printf("a = %d, b = %d\n",a, b);
+
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     int a = 3;
+//     int b = 8;
+//     int * p = &a; //定义指针指向a
+//     int * q = &b; //定义指针指向b
+//     int array[5];
+//     p = &array[0];
+//     q = &array[4];
+
+//     // int * p = &a; //定义指针指向a
+//     // int * q = &b; //定义指针指向b
+
+//     printf("p和q指向的单元相隔%d个单元\n", q - p);
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
-
-int a = 3;
-int b = 5;
-
-void huhuan(int a, int b)
-{
-    int t;
-    t = a;
-    a = b;
-    b = t;
-}
 
 int main(void)
 {
-    huhuan(a, b);
-    printf("a = %d, b = %d\n",a, b);
+    char ch = 'A';
+    int i = 999;
+    double x = 4343.33;
+    char *p = &ch;
+    int *q = &i;
+    double *r = &x;
+
+    printf("ch = %d, i = %d, x = %d\n", sizeof(p), sizeof(q), sizeof(r)); // 输出指针指向的值
+    printf("ch = %d, i = %d, x = %d\n", sizeof(char), sizeof(int), sizeof(double)); // 
+    printf("ch = %c, i = %d, x = %f\n", *p, *q, *r); // 输出指针指向的值
 
     return 0;
 }
-
