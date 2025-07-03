@@ -912,20 +912,195 @@
 // }
 
 
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     char ch = 'A';
+//     int i = 999;
+//     double x = 4343.33;
+//     char *p = &ch;
+//     int *q = &i;
+//     double *r = &x;
+
+//     printf("ch = %d, i = %d, x = %d\n", sizeof(p), sizeof(q), sizeof(r)); // 输出指针指向的值
+//     printf("ch = %d, i = %d, x = %d\n", sizeof(char), sizeof(int), sizeof(double)); // 
+//     printf("ch = %c, i = %d, x = %f\n", *p, *q, *r); // 输出指针指向的值
+
+//     return 0;
+// }
+
+
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(void)
+// {
+//     int a[5];
+//     int len;
+//     int * pArr;
+//     int i;
+
+//     //动态构造一维数组
+//     printf("请输入你要存放的元素的个数：");
+//     scanf("%d", &len);
+//     pArr = (int *)malloc(len * sizeof(int)); //动态的构造了一个一维数组, 该一维数组的长度是len，数组名是pArr。每个元素是int， 类似于int pArr[len];
+    
+//     //对数组进行赋值
+//     for ( i = 0; i < len; i++)
+//     {
+//         scanf("%d", &pArr[i]);
+//     }
+
+//     //输出数组的值
+//     printf("你输入的数组是：\n");
+//     for ( i = 0; i < len; i++)
+//     {
+//         printf("%d ", pArr[i]);
+//     }
+    
+//     return 0;
+// }
+
+
+
+// //互换数字复习
+// #include <stdio.h>
+
+// void exchange(int *a, int *b)
+// {
+//     int temp;
+//     temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// int main(void)
+// {
+//     int x = 122;
+//     int y = 1233;
+//     printf("交换前：x = %d, y = %d\n", x, y);
+//     exchange(&x, &y);
+//     printf("交换后：x = %d, y = %d\n", x, y);
+
+//     return 0;
+// } 
+
+
+
+// //打印最长输入行
+// #include <stdio.h>
+// #define MAXLINE 1000
+
+// int getline(char line[], int maxline);
+// void copy(char to[], char from[]);
+
+// int main(void)
+// {
+//     int len; // 当前行的长度
+//     int max; // 最大行的长度
+//     char line[MAXLINE]; // 存储当前行
+//     char longest[MAXLINE]; // 存储最长的行
+
+//     max = 0; // 初始化最大长度为0
+
+//     while ((len = getline(line, MAXLINE)) > 0) // 读取每一行
+//     {
+//         if (len > max) // 如果当前行的长度大于最大长度
+//         {
+//             max = len; // 更新最大长度
+//             copy(longest, line); // 复制当前行到最长行
+//         }
+//     }
+
+//     if (max > 0) // 如果有输入
+//         printf("最长的行是：%s", longest); // 输出最长的行
+
+//     return 0; // 返回0，表示程序正常结束
+// }
+
+// int getline(char s[], int lim)
+// {
+//     int c, i;
+
+//     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+//         s[i] = c; // 将字符存入数组
+//     if (c == '\n') // 如果遇到换行符
+//     {
+//         s[i] = c; // 将换行符存入数组
+//         ++i; // 增加长度
+//     }
+//     s[i] = '\0'; // 添加字符串结束符
+
+//     return i; // 返回当前行的长度
+// }
+
+// void copy(char to[], char from[])
+// {
+//     int i;
+
+//     i = 0;
+//     while ((to[i] = from[i]) != '\0') // 逐个字符复制
+//         ++i; // 增加索引
+// }
+
 #include <stdio.h>
-
-int main(void)
+int main()
 {
-    char ch = 'A';
-    int i = 999;
-    double x = 4343.33;
-    char *p = &ch;
-    int *q = &i;
-    double *r = &x;
+    int i;
+    char a[10];
+    // for ( i = 0; i < 10; i++)
+    // {
+    //     printf("请输入第%d个字符： ", i + 1);
+    //     scanf(" %c",&a[i]);
+    //     getchar();//清除输入缓冲区的换行符
+    // }
 
-    printf("ch = %d, i = %d, x = %d\n", sizeof(p), sizeof(q), sizeof(r)); // 输出指针指向的值
-    printf("ch = %d, i = %d, x = %d\n", sizeof(char), sizeof(int), sizeof(double)); // 
-    printf("ch = %c, i = %d, x = %f\n", *p, *q, *r); // 输出指针指向的值
-
+    // // printf("字符的值为：%c\n", a[0]); // 输出第一个字符
+    // for ( i = 0; i < 10; i++)
+    // {
+    //     printf("字符的值为：%c ", a[i]);
+    // }
+  
+    printf("字符的值为： ", a);
+    printf("\n请输入： ");
+    printf("%c",getchar());
+    printf("%c",getchar());
+    printf("%c",getchar());
     return 0;
 }
+
+
+// //scanf和getchar的使用区别
+// #include <stdio.h>
+// #define SIZE 10
+
+// int main() {
+//     int i;
+//     char a[SIZE];
+    
+//     printf("请输入%d个字符：\n", SIZE);
+//     for(i = 0; i < SIZE; i++) {
+//         printf("第%d个字符：", i+1);
+//         if(scanf(" %c", &a[i]) != 1) { 
+//             printf("输入无效，请重新输入！\n");
+//             while(getchar() != '\n'); // 清空输入缓冲区
+//             i--; // 重试当前输入    
+//             continue;
+//         }
+//         else
+//         {
+//             printf("i = %d\n", i);
+//         }
+        
+//     }
+
+//     printf("\n输入的字符为：");
+//     for(i = 0; i < SIZE; i++) {
+//         printf("%c ", a[i]);
+//     }
+//     printf("\n");
+
+//     return 0;
+// }
