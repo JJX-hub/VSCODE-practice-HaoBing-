@@ -1045,31 +1045,31 @@
 //         ++i; // 增加索引
 // }
 
-#include <stdio.h>
-int main()
-{
-    int i;
-    char a[10];
-    // for ( i = 0; i < 10; i++)
-    // {
-    //     printf("请输入第%d个字符： ", i + 1);
-    //     scanf(" %c",&a[i]);
-    //     getchar();//清除输入缓冲区的换行符
-    // }
+// #include <stdio.h>
+// int main()
+// {
+//     int i;
+//     char a[10];
+//     for ( i = 0; i < 10; i++)
+//     {
+//         printf("请输入第%d个字符： ", i + 1);
+//         scanf(" %c",&a[i]);
+//         getchar();//清除输入缓冲区的换行符
+//     }
 
-    // // printf("字符的值为：%c\n", a[0]); // 输出第一个字符
-    // for ( i = 0; i < 10; i++)
-    // {
-    //     printf("字符的值为：%c ", a[i]);
-    // }
+//     // printf("字符的值为：%c\n", a[0]); // 输出第一个字符
+//     for ( i = 0; i < 10; i++)
+//     {
+//         printf("第%d个字符的值为：%c ", i+1, a[i]);
+//     }
   
-    printf("字符的值为： ", a);
-    printf("\n请输入： ");
-    printf("%c",getchar());
-    printf("%c",getchar());
-    printf("%c",getchar());
-    return 0;
-}
+//     // printf("字符的值为： ", a);
+//     // printf("\n请输入： ");
+//     // printf("%c",getchar());
+//     // printf("%c",getchar());
+//     // printf("%c",getchar());
+//     return 0;
+// }
 
 
 // //scanf和getchar的使用区别
@@ -1104,3 +1104,53 @@ int main()
 
 //     return 0;
 // }
+
+
+// //数组的大小
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     long long int arry[5] = {1111111111,33333333333,22222222,33333333,44444444};
+//     printf("sizeof(arry) = %ld\n", sizeof(arry)); // 输出数组的大小
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("arry[%d] = %lld\n", i, arry[i]);
+//     }
+    
+
+//     return 0;
+// }
+
+// //制表符占几个空格——8个
+// #include<stdio.h>
+// int main(){
+// 	printf("123456781234567812345678\n");//line1
+// 	printf("\ta\n");                     //line2
+// 	printf("1234\ta\n");                 //line3
+// 	printf("1234567\ta\n");              //line4
+// 	printf("12345678\ta\n");             //line5
+// 	printf("1234567812345\ta\n");        //line6
+// 	printf("123456781234567\ta\n");      //line7
+// 	printf("1234567812345678\ta\n");     //line8
+// 	return 0;
+// }
+
+// 输出乘法表
+#include <stdio.h>
+#define count 10
+
+int main(void)
+{  
+    for (int i = 1; i < count; i++)
+    {
+        for (int j = 1; j < i+1; j++)
+        {
+            printf("%d×%d=%d\t", j, i, i * j); // 输出乘法表的每一项
+        }
+        printf("\n"); // 每行结束后换行
+    }
+    
+
+    return 0;
+}
