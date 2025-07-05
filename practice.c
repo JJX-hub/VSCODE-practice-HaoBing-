@@ -1136,21 +1136,46 @@
 // 	return 0;
 // }
 
-// 输出乘法表
-#include <stdio.h>
-#define count 10
+// // 输出乘法表
+// #include <stdio.h>
+// #define count 10
 
-int main(void)
-{  
-    for (int i = 1; i < count; i++)
-    {
-        for (int j = 1; j < i+1; j++)
-        {
-            printf("%d×%d=%d\t", j, i, i * j); // 输出乘法表的每一项
-        }
-        printf("\n"); // 每行结束后换行
-    }
+// int main(void)
+// {  
+//     for (int i = 1; i < count; i++)
+//     {
+//         for (int j = 1; j < i+1; j++)
+//         {
+//             printf("%d×%d=%d\t", j, i, i * j); // 输出乘法表的每一项
+//         }
+//         printf("\n"); // 每行结束后换行
+//     }
     
 
+//     return 0;
+// }
+
+
+#include <stdio.h>
+
+struct Student
+{
+    char name[20];
+    int age;
+    char sex;
+    float score;
+};
+// 前面这一块叫结构体 
+
+int main(void)
+{
+    struct Student st = // 这个叫结构体变量
+    {
+        "张三",
+        20,
+        'M',
+        100.0
+    };
+     
     return 0;
 }
