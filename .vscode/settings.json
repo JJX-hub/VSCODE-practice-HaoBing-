@@ -1,6 +1,7 @@
 {
     "idf.flashType": "JTAG",
     "files.associations": {
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "typeinfo": "c"
     }
 }

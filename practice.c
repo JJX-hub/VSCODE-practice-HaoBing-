@@ -1157,25 +1157,36 @@
 
 
 #include <stdio.h>
+#include <string.h>
 
 struct Student
 {
-    char name[20];
+    char name[100];
     int age;
     char sex;
     float score;
-};
+}; // 分号不能省略
 // 前面这一块叫结构体 
 
 int main(void)
 {
-    struct Student st = // 这个叫结构体变量
-    {
-        "张三",
-        20,
-        'M',
-        100.0
-    };
+    struct Student st;
+    
+    // struct Student st = // 这个叫结构体变量
+    // {
+    //     "张三",
+    //     20,
+    //     'M',
+    //     100.0
+    // };
+    struct Student * pst = &st;
+
+    pst -> age = 20;
+    strcpy(pst -> name, "张三");
+    st.sex = 'F';
+
+    printf("%d %c %s", st.age, st.sex, st.name);
+    
      
     return 0;
 }
