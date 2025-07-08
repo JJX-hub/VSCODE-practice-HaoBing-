@@ -1234,3 +1234,77 @@
     
 //     return 0;
 // }
+
+
+
+// #include <stdio.h>
+
+// // 枚举类型的定义
+// // 枚举类型是一种用户自定义的数据类型，它由一组命名的整数常量组成
+// // 枚举类型可以使代码更易读，便于维护
+// // 在C语言中，枚举类型使用关键字enum来定义
+// // 枚举类型中的每个枚举常量都被赋予一个整数值，默认从0开始递增
+// // 可以手动指定枚举常量的值，也可以让编译器自动分配
+// enum Weekday
+// {
+//     MONDAY,
+//     TUESDAY,
+//     WEDNESDAY,
+//     THURSDAY,
+//     FRIDAY,
+//     SATURDAY,
+//     SUNDAY
+// };
+
+// int main(void)
+// {
+//     enum Weekday today;
+//     today = WEDNESDAY;
+//     printf("%d\n", today);
+
+//     return 0;
+// }
+
+
+// // 补码
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     int i;
+//     i = 0x7FFFFFFF;
+
+//     printf("i = %d\n", i);
+
+//     return 0;
+// }
+
+
+// 指针数组的使用
+#include <stdio.h>
+
+int main() {
+    int nums[] = {10, 20, 30, 40, 50};
+    int *p = nums;  // p指向数组第一个元素
+    
+    printf("使用指针[]访问:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("p[%d] = %d\n", i, p[i]);
+    }
+    
+    printf("\n等价于指针算术运算:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("*(p + %d) = %d\n", i, *(p + i));
+    }
+
+    printf("\n等价于数组下标访问:\n");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("nums[%d] = %d\n", i, nums[i]);
+    }
+    
+    printf("指针大小： %zu bytes\n", sizeof(p));
+    printf("数组大小： %zu bytes\n", sizeof(nums));
+
+    return 0;
+}

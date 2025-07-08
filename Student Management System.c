@@ -41,7 +41,6 @@ void inputStudentInfo(int len, struct Student *pArr)
         printf("成绩：");
         scanf("%f", &pArr[i].score);
     }
-    
 }
 
 // 打印学生信息
