@@ -1072,37 +1072,37 @@
 // }
 
 
-//scanf和getchar的使用区别
-#include <stdio.h>
-#define SIZE 10
+// //scanf和getchar的使用区别
+// #include <stdio.h>
+// #define SIZE 10
 
-int main() {
-    int i;
-    char a[SIZE];
+// int main() {
+//     int i;
+//     char a[SIZE];
     
-    printf("请输入%d个字符：\n", SIZE);
-    for(i = 0; i < SIZE; i++) {
-        printf("第%d个字符：", i+1);
-        if(scanf(" %s", &a[i]) != 1) { 
-            printf("输入无效，请重新输入！\n");
-            while(getchar() != '\n'); // 清空输入缓冲区
-            i--; // 重试当前输入    
-            continue;
-        }
-        else
-        {
-            printf("i = %d\n", i);
-        }
-    }
+//     printf("请输入%d个字符：\n", SIZE);
+//     for(i = 0; i < SIZE; i++) {
+//         printf("第%d个字符：", i+1);
+//         if(scanf(" %s", &a[i]) != 1) { 
+//             printf("输入无效，请重新输入！\n");
+//             while(getchar() != '\n'); // 清空输入缓冲区
+//             i--; // 重试当前输入    
+//             continue;
+//         }
+//         else
+//         {
+//             printf("i = %d\n", i);
+//         }
+//     }
 
-    printf("\n输入的字符为：");
-    for(i = 0; i < SIZE; i++) {
-        printf("%c", a[i]);
-    }
-    printf("\n");
+//     printf("\n输入的字符为：");
+//     for(i = 0; i < SIZE; i++) {
+//         printf("%c", a[i]);
+//     }
+//     printf("\n");
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 // //数组的大小
@@ -1307,3 +1307,27 @@ int main() {
 
 //     return 0;
 // }
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    int i;
+    char j;
+    float k;
+    int year, month, day;
+
+    // scanf("%d%f%c", &i, &k, &j);
+    scanf("%d-%d-%d", &year, &month, &day);
+
+    // printf("%d %f %c\n", i, k, j);
+    printf("%d %d %d\n", year, month, day);
+
+    
+
+    // printf("%d\n", sizeof(i));
+    // printf("%d\n", sizeof(j));
+
+    return 0;
+}
