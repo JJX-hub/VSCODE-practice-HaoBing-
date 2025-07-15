@@ -1309,25 +1309,60 @@
 // }
 
 
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     int i;
+//     char j;
+//     float k;
+//     int year, month, day;
+
+//     // scanf("%d%f%c", &i, &k, &j);
+//     scanf("%d-%d-%d", &year, &month, &day);
+
+//     // printf("%d %f %c\n", i, k, j);
+//     printf("%d %d %d\n", year, month, day);
+
+    
+
+//     // printf("%d\n", sizeof(i));
+//     // printf("%d\n", sizeof(j));
+
+//     return 0;
+// }
+
+
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     float f1 = 3.14f;
+//     printf("%d", sizeof(float));
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(void)
+// {  
+//     char * parr;
+
+//     parr = (char *)malloc(4);
+//     printf("%d", sizeof(parr));
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
 int main(void)
 {
-    int i;
-    char j;
-    float k;
-    int year, month, day;
-
-    // scanf("%d%f%c", &i, &k, &j);
-    scanf("%d-%d-%d", &year, &month, &day);
-
-    // printf("%d %f %c\n", i, k, j);
-    printf("%d %d %d\n", year, month, day);
-
     
-
-    // printf("%d\n", sizeof(i));
-    // printf("%d\n", sizeof(j));
 
     return 0;
 }

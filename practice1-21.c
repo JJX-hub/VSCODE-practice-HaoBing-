@@ -42,10 +42,8 @@ int main(void)
                     pos = pos + (TAB_SIZE - (pos - 1) % TAB_SIZE) - 1;
             }
             
-            
         }
     }
     
-
     return 0;
 }
