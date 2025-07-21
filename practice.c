@@ -1400,13 +1400,59 @@
 // }
 
 
+// #include <stdio.h>
+
+// int swap(int *a, int *b)
+// {
+//     int temp;
+//     temp = *a;
+//     *a = *b;
+//     *b = temp;
+//     printf ("%d\n%d", *a, *b);
+// }
+
+// int main(void)
+// {
+//     int a, b;
+//     a = 1;
+//     b = 2;
+
+//     swap(&a, &b);
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
-int main(void)
+void BubbleSort(int *arr, int len)
 {
-    int a = 1;
-    printf("%x\n", a);
-    printf("%p\n", &a);
+    for (int i = 0; i < len - 1; i++)
+    {
+        for (int j = i + 1; j < len; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                int temp;
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
 
+int main()
+{
+    int arr[8] = {7, 3, 4, 9, 10, 9, 4, 5};
+    int len = sizeof(arr) / sizeof(arr[0]);
+    printf("len = %d\n", len);
+
+    BubbleSort(arr, len);
+
+    for (int i = 0; i < len; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+    
     return 0;
 }
