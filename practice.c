@@ -491,7 +491,13 @@
 //     return 0; // 返回0，表示程序正常结束
 // }
 
-
+/* 电梯楼层选择 
+Case1
+Case2
+Case3
+是程序语句的入口，如果value等于1，就执行下面的语句，如果value等于2，就执行2下面的语句
+除此之外就执行default后面的语句
+*/
 // #include <stdio.h>
 
 // int main()
@@ -1422,37 +1428,193 @@
 // }
 
 
+// #include <stdio.h>
+
+// void BubbleSort(int *arr, int len)
+// {
+//     for (int i = 0; i < len - 1; i++)
+//     {
+//         for (int j = i + 1; j < len; j++)
+//         {
+//             if (arr[i] > arr[j])
+//             {
+//                 int temp;
+//                 temp = arr[i];
+//                 arr[i] = arr[j];
+//                 arr[j] = temp;
+//             }
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     int arr[8] = {7, 3, 4, 9, 10, 9, 4, 5};
+//     int len = sizeof(arr) / sizeof(arr[0]);
+//     printf("len = %d\n", len);
+
+//     BubbleSort(arr, len);
+
+//     for (int i = 0; i < len; i++)
+//     {
+//         printf("%d\n", arr[i]);
+//     }
+    
+//     return 0;
+// }
+
+//字符还是字符串
+//字符是一个字符，字符串是一个字符数组
+
+/*
+结果
+ch = A
+ch1 = AV
+*/
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     char ch = 'A';
+//     char ch1[3] = "AV";
+
+//     printf("ch = %c\n", ch);
+//     printf("ch1 = %s\n", ch1);
+
+//     return 0;
+// }
+
+
+//EOF的值
+/*
+结果
+请输入字符，按Ctrl+D(Linux/Mac)或Ctrl+Z(Windows)结束：
+sdf
+sdf
+^Z
+
+总共处理了 4 个字符
+getchar() 返回了 EOF
+EOF 的值是: -1
+
+这里显示处理4个字符，是因为输入了3个字符sdf和一个换行符
+*/
+// #include <stdio.h>
+
+// int main() {
+//     int c;
+//     int count = 0;
+    
+//     printf("请输入字符，按Ctrl+D(Linux/Mac)或Ctrl+Z(Windows)结束：\n");
+    
+//     // getchar() 示例
+//     while ((c = getchar()) != EOF) {
+//         putchar(c);
+//         count++;
+//     }
+    
+//     printf("\n总共处理了 %d 个字符\n", count);
+//     printf("getchar() 返回了 EOF\n");
+    
+//     // 验证 EOF 的值
+//     printf("EOF 的值是: %d\n", EOF);
+    
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     int a[5] = {1, 2, 3, 4, 5};
+//     int len = sizeof(a) / sizeof(a[0]);
+//     printf("len = %d\n", len);
+
+//     printf("a[5] = %d\n", a[5]);
+
+//     return 0;
+// }
+
+// //互换两个数练习
+// #include <stdio.h>
+
+// void huhuan(int *a, int *b)
+// {
+//     int temp;
+//     temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+// int main(void)
+// {
+//     int a, b;
+//     a = 1;
+//     b = 3;
+
+//     huhuan(&a, &b);
+//     printf("%d\n%d", a, b);
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+
+// struct Student
+// {
+//     char id[10];
+//     char name[50];
+//     int age;
+//     int score;
+//     char sex[10];
+// };
+
+// int main(void)
+// {
+//     struct Student stu = {"0605", "张三", 18, 90, "男"}; //要按照顺序一个一个填写，不能乱填
+//     //stu = {0605, 18, "张三", 90, "男"};
+//     printf("id = %s\n", stu.id);
+//     printf("name = %s\n", stu.name);
+//     printf("age = %d\n", stu.age);
+//     printf("score = %d\n", stu.score);
+//     printf("sex = %s\n", stu.sex);
+//     return 0;
+// }
+
+
 #include <stdio.h>
 
-void BubbleSort(int *arr, int len)
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+void test(struct Node *head)
 {
-    for (int i = 0; i < len - 1; i++)
-    {
-        for (int j = i + 1; j < len; j++)
-        {
-            if (arr[i] > arr[j])
-            {
-                int temp;
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
+    // 遍历链表
+    struct Node *current = head;  //先定义一个辅助指针变量
+    while (current != NULL) {
+        printf("%d -> ", current->data);
+        current = current->next;    //指针移动到下一个元素的首地址
     }
+    printf("NULL\n");
 }
 
-int main()
+int main(void)
 {
-    int arr[8] = {7, 3, 4, 9, 10, 9, 4, 5};
-    int len = sizeof(arr) / sizeof(arr[0]);
-    printf("len = %d\n", len);
+    struct Node node1 = {1, NULL};
+    struct Node node2 = {2, NULL};
+    struct Node node3 = {3, NULL};
+    struct Node node4 = {4, NULL};
+    struct Node node5 = {5, NULL};
+    struct Node node6 = {6, NULL};
 
-    BubbleSort(arr, len);
+    node1.next = &node2;
+    node2.next = &node3;
+    node3.next = &node4;
+    node4.next = &node5;
+    node5.next = &node6;
 
-    for (int i = 0; i < len; i++)
-    {
-        printf("%d\n", arr[i]);
-    }
-    
+    test(&node1);
+
     return 0;
 }
