@@ -44,6 +44,8 @@
         "queue": "c",
         "sstream": "c",
         "stdexcept": "c",
-        "random": "c"
+        "random": "c",
+        "linklist.h": "c",
+        "stdlib.h": "c"
     }
 }
