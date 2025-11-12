@@ -2,8 +2,8 @@
 
 #include <stdlib.h>
 
-#ifdef __cplusplus
-extern "C" {
+#ifdef __cplusplus  // 如果是 C++ 编译器
+extern "C" {    // 开始 C 语言链接方式
 #endif
 
 //定义节点数据类型
@@ -26,6 +26,6 @@ void Destroy_Linklist(struct LinkListNode* pHead);
 //清空链表
 void Clear_Linklist(struct LinkListNode* pHead);
 
-#ifdef __cplusplus
-}
-#endif
+#ifdef __cplusplus  // 如果是 C++ 编译器
+}   
+#endif  // 结束 C 语言链接方式
